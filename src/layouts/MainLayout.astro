@@ -1,0 +1,35 @@
+---
+const { title } = Astro.props;
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title} | Okolona Church of Christ</title>
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+		<style is:global>
+			:root {
+				--ok-blue: #05B200;
+				--ok-yellow: #FBAA1D;
+				--ok-deep-sky: #0D1035;
+				--ok-white: #FFFFFF;
+				--ok-berry: #AA2967;
+			}
+			body { 
+				font-family: 'Mulish', sans-serif; 
+				margin: 0;
+				color: var(--ok-deep-sky);
+			}
+			h1, h2 { 
+				font-weight: 900; /* Mulish Black */
+				text-transform: uppercase;
+				color: var(--ok-blue);
+			}
+		</style>
+	</head>
+	<body>
+		<nav style="padding: 20px; border-bottom: 4px solid var(--ok-yellow);">
+			<strong>Okolona Church of Christ</strong>
+		</nav>
+		<slot /> </body>
+</html>
