@@ -1,11 +1,25 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Okolona Admin Dashboard</title>
-</head>
-<body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</body>
-</html>
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout title="HOME">
+  <section style="background: var(--ok-blue); color: white; padding: 100px 20px; text-align: center;">
+    <h1 style="font-weight: 900; font-size: 3.5rem; color: white; margin: 0;">LIGHT ON THE HILL</h1>
+    <p style="font-size: 1.5rem; max-width: 700px; margin: 20px auto;">Connecting Louisville to the energy and love of Christ.</p>
+  </section>
+
+  <section style="padding: 60px 20px; max-width: 1000px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
+      <div>
+        <h2 style="color: var(--ok-blue); font-weight: 900;">COMMUNITY MATTERS</h2>
+        <p>Whether we're gathering for breakfast at 9:30 AM or exploring local favorites in Louisville, we believe life is better together[cite: 615].</p>
+        <div style="height: 4px; width: 60px; background: var(--ok-yellow); margin-top: 20px;"></div>
+      </div>
+      
+      <div style="background: var(--ok-cream); padding: 40px; border-radius: 8px; border-right: 8px solid var(--ok-yellow);">
+         <h3 style="font-weight: 900; margin-top: 0;">LATEST MESSAGE</h3>
+         <p>Our sermon archive is updated weekly with messages that empower and inspire.</p>
+         <a href="/sermons" style="color: var(--ok-blue); font-weight: 700; text-decoration: none;">Watch Library →</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
