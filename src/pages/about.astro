@@ -1,0 +1,28 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allBeliefs = await getCollection('beliefs');
+const sortedBeliefs = allBeliefs.sort((a, b) => a.data.order - b.data.order);
+---
+
+<MainLayout title="About Us">
+  <section style="padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+    <h1>What We Believe</h1>
+    <p style="font-size: 1.2rem; line-height: 1.6;">
+      Okolona Church of Christ is a community driven by energy and light. 
+      Below are the core pillars of our faith.
+    </p>
+
+    <div style="margin-top: 40px;">
+      {sortedBeliefs.map(belief => (
+        <div style="margin-bottom: 40px; border-left: 4px solid var(--ok-yellow); padding-left: 20px;">
+          <h2 style="color: var(--ok-blue); margin-bottom: 10px;">{belief.data.title}</h2>
+          <div style="line-height: 1.6;">
+             {belief.body}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</MainLayout>
