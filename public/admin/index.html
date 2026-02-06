@@ -8,16 +8,12 @@
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // This script listens for the login token and keeps you on the page
-    if (window.opener) {
-      window.addEventListener("message", (event) => {
-        if (event.data.indexOf("authorization:github:success") === 0) {
-          const data = JSON.parse(event.data.replace("authorization:github:success:", ""));
-          // Manual trigger to tell Decap the login worked
-          window.localStorage.setItem("decap-cms-user", JSON.stringify(data));
-          window.location.reload();
-        }
-      }, false);
+    // If we land here with a token in the URL, save it and refresh
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('access_token');
+    if (token) {
+      window.localStorage.setItem("decap-cms-user", JSON.stringify({token, provider: "github"}));
+      window.location.href = window.location.pathname;
     }
   </script>
 </body>
