@@ -1,13 +1,16 @@
+# 1. Backend: This is the "Engine" that talks to GitHub via your Worker
 backend:
   name: github
   repo: joshuaewatkins/okolona-church-site
   branch: main
-  base_url: https://okolona-auth.joshuaewatkins.workers.dev
+  base_url: https://okolona-church-site.pages.dev # Replace with your Worker URL
   auth_endpoint: /auth
 
+# 2. Media: These are required by the CMS to handle images
 media_folder: "public/images"
 public_folder: "/images"
 
+# 3. Collections: This tells the CMS what forms to show you
 collections:
   - name: "beliefs"
     label: "Core Beliefs"
