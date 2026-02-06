@@ -1,0 +1,43 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const channelId = "UCIvq6I_RX1P1nZ41nJ-HHjg";
+---
+<MainLayout title="Sermons">
+  <section style="padding: 60px 20px; text-align: center;">
+    <h1 style="color: var(--ok-blue); font-weight: 900;">Sermon Library</h1>
+    <p>Watch our latest messages and join us as we explore the Word together.</p>
+
+    <div id="sermon-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 40px;">
+      <p>Loading the latest messages...</p>
+    </div>
+  </section>
+
+  <script define:vars={{ channelId }}>
+    async function loadSermons() {
+      try {
+        const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`);
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, "text/xml");
+        const entries = Array.from(xml.querySelectorAll("entry")).slice(0, 6); // Gets last 6 videos
+
+        const grid = document.getElementById('sermon-grid');
+        grid.innerHTML = entries.map(entry => {
+          const vId = entry.querySelector("yt\\:videoId, videoId").textContent;
+          const title = entry.querySelector("title").textContent;
+          return `
+            <div style="background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+              <iframe width="100%" height="200" src="https://www.youtube.com/embed/${vId}" frameborder="0" allowfullscreen></iframe>
+              <div style="padding: 15px;">
+                <h3 style="font-size: 1rem; color: var(--ok-deep-sky); margin: 0;">${title}</h3>
+              </div>
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error("Failed to load sermons", e);
+      }
+    }
+    loadSermons();
+  </script>
+</MainLayout>
