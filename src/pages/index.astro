@@ -14,13 +14,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 </MainLayout>
 
 <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
+  // If the URL has a "token" or "access_token" from GitHub, 
+  // it means we just logged in. Send us to the admin panel!
+  if (window.location.hash.includes("access_token") || window.location.search.includes("code")) {
+    window.location.href = "/admin/";
   }
 </script>
