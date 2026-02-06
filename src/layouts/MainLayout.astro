@@ -1,36 +1,46 @@
 ---
-const { title } = Astro.props;
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+const { title } = Astro.props;
 ---
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{title} | Okolona Church of Christ</title>
-		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-		<style is:global>
-			:root {
-				--ok-blue: #05B200;
-				--ok-yellow: #FBAA1D;
-				--ok-deep-sky: #0D1035;
-				--ok-white: #FFFFFF;
-				--ok-berry: #AA2967;
-			}
-			body { 
-				font-family: 'Mulish', sans-serif; 
-				margin: 0;
-				color: var(--ok-deep-sky);
-			}
-			h1, h2 { 
-				font-weight: 900; /* Mulish Black */
-				text-transform: uppercase;
-				color: var(--ok-blue);
-			}
-		</style>
-	</head>
-	<body>
-	<Navigation />
-	<Footer />
-		<slot /> </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} | Okolona Church of Christ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style is:global>
+      :root {
+        --ok-blue: #05B200; /* [cite: 78-79] */
+        --ok-yellow: #FBAA1D; /* [cite: 80-81] */
+        --ok-deep-sky: #0D1035; /* [cite: 82-83] */
+        --ok-white: #FFFFFF; /* [cite: 84-85] */
+        --ok-cream: #FFF3D6; /* [cite: 93-94] */
+        --ok-berry: #AA2967; /* [cite: 101-102] */
+      }
+      body { 
+        font-family: 'Mulish', sans-serif; /* [cite: 123] */
+        margin: 0;
+        color: var(--ok-deep-sky);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      main {
+        flex: 1; /* This pushes the footer to the bottom of the screen */
+      }
+      h1, h2, h3 { 
+        font-weight: 900; /* Mulish Black [cite: 144] */
+        text-transform: uppercase; /* [cite: 144] */
+      }
+    </style>
+  </head>
+  <body>
+    <Navigation />
+    
+    <main>
+      <slot /> </main>
+    
+    <Footer />
+  </body>
 </html>
