@@ -1,16 +1,17 @@
-# 1. Backend: This is the "Engine" that talks to GitHub via your Worker
 backend:
   name: github
   repo: joshuaewatkins/okolona-church-site
   branch: main
-  base_url: https://okolona-church-site.pages.dev # Replace with your Worker URL
+  base_url: https://okolona-church-site.pages.dev
   auth_endpoint: /auth
 
-# 2. Media: These are required by the CMS to handle images
+site_url: https://okolona-church-site.pages.dev
+display_name: Okolona Admin
+
+# These are the properties the error is looking for
 media_folder: "public/images"
 public_folder: "/images"
 
-# 3. Collections: This tells the CMS what forms to show you
 collections:
   - name: "beliefs"
     label: "Core Beliefs"
@@ -19,5 +20,5 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Order (1, 2, 3...)", name: "order", widget: "number" }
-      - { label: "Belief Description", name: "body", widget: "markdown" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
