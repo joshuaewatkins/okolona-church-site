@@ -2,7 +2,7 @@ backend:
   name: github
   repo: joshuaewatkins/okolona-church-site
   branch: main
-  base_url: https://okolona-auth.joshuaewatkins.workers.dev/
+  base_url: https://okolona-auth.joshuaewatkins.workers.dev
   auth_endpoint: /auth
 
 media_folder: "public/images"
