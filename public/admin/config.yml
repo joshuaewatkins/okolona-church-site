@@ -1,12 +1,13 @@
-site_url: https://okolona-church-site.pages.dev
-media_folder: "public/images"
-public_folder: "/images"
 backend:
   name: github
   repo: joshuaewatkins/okolona-church-site
   branch: main
   base_url: https://okolona-auth.joshuaewatkins.workers.dev
   auth_endpoint: /auth
+
+media_folder: "public/images"
+public_folder: "/images"
+
 collections:
   - name: "beliefs"
     label: "Core Beliefs"
