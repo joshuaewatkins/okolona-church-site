@@ -1,1 +1,30 @@
 
+---
+/* Navigation links */
+const navItems = [
+  { name: 'HOME', href: '/' },
+  { name: 'ABOUT', href: '/about' },
+  { name: 'SERMONS', href: '/sermons' },
+  { name: 'CONNECT', href: '/connect' },
+];
+---
+<nav style="background: var(--ok-white); padding: 20px; border-bottom: 4px solid var(--ok-yellow); display: flex; justify-content: space-between; align-items: center;">
+  <div style="font-weight: 900; color: var(--ok-blue); letter-spacing: 1px;">
+    OKOLONA CHURCH OF CHRIST
+  </div>
+  
+  <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; align-items: center;">
+    {navItems.map(item => (
+      <li>
+        <a href={item.href} style="text-decoration: none; color: var(--ok-deep-sky); font-weight: 700; font-size: 0.9rem;">
+          {item.name}
+        </a>
+      </li>
+    ))}
+    <li>
+      <a href="/give" style="background: var(--ok-blue); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 900;">
+        GIVE
+      </a>
+    </li>
+  </ul>
+</nav>
