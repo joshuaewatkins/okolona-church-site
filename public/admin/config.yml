@@ -5,8 +5,6 @@ backend:
   base_url: https://okolona-auth.joshuaewatkins.workers.dev
   auth_endpoint: /auth
 
-site_url: https://okolona-church-site.pages.dev
-
 media_folder: "public/images"
 public_folder: "/images"
 
