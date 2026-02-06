@@ -1,0 +1,41 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout title="CONNECT">
+  <section style="padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center;">
+    <h1 style="font-weight: 900; color: var(--ok-blue);">CONNECT WITH US</h1>
+    <p>We would love to meet you. Here is everything you need to join us this week.</p>
+  </section>
+
+  <section style="background-color: var(--ok-cream); padding: 60px 20px;">
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+      <div>
+        <h2 style="font-weight: 900; color: var(--ok-blue);">SERVICE TIMES</h2>
+        <p style="font-weight: 700; margin-bottom: 5px;">SUNDAYS</p>
+        <p style="margin: 0;">9:30 AM — Bible Study & Breakfast </p>
+        <p style="margin: 0;">10:30 AM — Morning Worship [cite: 293]</p>
+      </div>
+      <div>
+        <h2 style="font-weight: 900; color: var(--ok-blue);">LOCATION</h2>
+        <p style="margin: 0;">6105 Outer Loop [cite: 294]</p>
+        <p style="margin: 0;">Louisville, KY 40219 [cite: 295]</p>
+        <p style="margin-top: 15px; font-weight: 700;">(502) 969-2384 [cite: 296]</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 80px 20px; max-width: 800px; margin: 0 auto;">
+    <h2 style="font-weight: 900; color: var(--ok-blue); text-align: center;">TELL US ABOUT YOURSELF</h2>
+    <p style="text-align: center; margin-bottom: 40px;">Fill out the form below and one of our ministers will reach out to you.</p>
+    
+    <div style="background: white; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+      <iframe 
+        src="https://okolona.churchcenter.com/people/forms/YOUR_FORM_ID" 
+        width="100%" 
+        height="800" 
+        frameborder="0" 
+        scrolling="no">
+      </iframe>
+    </div>
+  </section>
+</MainLayout>
