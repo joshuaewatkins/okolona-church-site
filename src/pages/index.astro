@@ -1,17 +1,14 @@
 ---
-/* This is where the logic goes */
+import MainLayout from '../layouts/MainLayout.astro';
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Okolona Church of Christ</title>
-		<style>
-			body { font-family: sans-serif; text-align: center; padding: 50px; }
-			h1 { color: #05B200; [cite_start]} /* Okolona Blue [cite: 79] */
-		</style>
-	</head>
-	<body>
-		<h1>Okolona Church of Christ</h1>
-		<p>Our new digital home is coming soon.</p>
-	</body>
-</html>
+<MainLayout title="Home">
+	<main style="padding: 40px; text-align: center;">
+		<h1>Welcome to the Hill</h1>
+		<p>A place of energy, youth, and light.</p>
+		
+		<div style="margin-top: 50px; padding: 20px; background: #f0f0f0; border-radius: 8px;">
+			<h2>Latest Sermon</h2>
+			<p>(YouTube Stream will appear here automatically soon!)</p>
+		</div>
+	</main>
+</MainLayout>
