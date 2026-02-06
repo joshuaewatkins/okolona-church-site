@@ -6,23 +6,26 @@ const allBeliefs = await getCollection('beliefs');
 const sortedBeliefs = allBeliefs.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<MainLayout title="About Us">
-  <section style="padding: 60px 20px; max-width: 800px; margin: 0 auto;">
-    <h1>What We Believe</h1>
-    <p style="font-size: 1.2rem; line-height: 1.6;">
+<MainLayout title="ABOUT US">
+  <section style="padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 auto;">
+    <h1 style="font-weight: 900; font-size: 3rem; margin-bottom: 20px;">ABOUT US</h1>
+    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--ok-deep-sky);">
       Okolona Church of Christ is a community driven by energy and light. 
-      Below are the core pillars of our faith.
+      Adhering to our core principles, we seek to foster recognition, trust, and loyalty.
     </p>
+  </section>
 
-    <div style="margin-top: 40px;">
-      {sortedBeliefs.map(belief => (
-        <div style="margin-bottom: 40px; border-left: 4px solid var(--ok-yellow); padding-left: 20px;">
-          <h2 style="color: var(--ok-blue); margin-bottom: 10px;">{belief.data.title}</h2>
-          <div style="line-height: 1.6;">
+  <div style="margin-top: 20px;">
+    {sortedBeliefs.map((belief, index) => (
+      <section style={`padding: 60px 20px; background-color: ${index % 2 === 0 ? 'var(--ok-white)' : 'var(--ok-cream)'};`}>
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h2 style="font-weight: 900; color: var(--ok-blue); margin-bottom: 15px;">{belief.data.title.toUpperCase()}</h2>
+          <div style="line-height: 1.8; font-size: 1rem; color: var(--ok-deep-sky);">
              {belief.body}
           </div>
+          <div style="height: 4px; width: 60px; background-color: var(--ok-yellow); margin-top: 20px;"></div>
         </div>
-      ))}
-    </div>
-  </section>
+      </section>
+    ))}
+  </div>
 </MainLayout>
