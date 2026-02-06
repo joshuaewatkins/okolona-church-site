@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+import Navigation from '../components/Navigation.astro';
 ---
 <html lang="en">
 	<head>
@@ -28,8 +29,6 @@ const { title } = Astro.props;
 		</style>
 	</head>
 	<body>
-		<nav style="padding: 20px; border-bottom: 4px solid var(--ok-yellow);">
-			<strong>Okolona Church of Christ</strong>
-		</nav>
+	<Navigation />
 		<slot /> </body>
 </html>
