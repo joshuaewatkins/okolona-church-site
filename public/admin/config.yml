@@ -1,9 +1,12 @@
 backend:
   name: github
-  repo: joshuaewatkins/okolona-church-site
+  repo: joshuaewatkins/okolona-church-site # MUST be exactly your-username/your-repo-name
   branch: main
   base_url: https://okolona-auth.joshuaewatkins.workers.dev
   auth_endpoint: /auth
+
+site_url: https://okolona-church-site.pages.dev
+display_url: https://okolona-church-site.pages.dev
 
 media_folder: "public/images"
 public_folder: "/images"
