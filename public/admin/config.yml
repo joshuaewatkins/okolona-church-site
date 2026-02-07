@@ -9,11 +9,12 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "beliefs"
-    label: "Core Beliefs"
-    folder: "src/content/beliefs"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Order", name: "order", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "src/content/about.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
