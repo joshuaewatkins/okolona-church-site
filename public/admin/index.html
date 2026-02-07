@@ -8,16 +8,12 @@
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // This script listens for the "success" message from your Worker
     window.addEventListener("message", (event) => {
       if (event.data.startsWith("authorization:github:success:")) {
         const content = event.data.replace("authorization:github:success:", "");
-        const data = JSON.parse(content);
-        
-        // This is the "pocket" - it saves the token to your browser
-        window.localStorage.setItem("decap-cms-user", JSON.stringify(data));
-        
-        // Refresh to show the dashboard
+        // Save the key in the "pocket"
+        window.localStorage.setItem("decap-cms-user", content);
+        // Force the dashboard to wake up
         window.location.reload();
       }
     }, false);
